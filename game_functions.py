@@ -34,10 +34,23 @@ def burn(hand, main_deck, index_of_hand):
 
 
 def burn_from_hand(card1 , card2, hand, card_on_table):
+    # In the future add a check if to see if you are able to burn
+    print(hand)
+    select_card1 = int(input("Select the 1st card you want to burn: "))
+    select_card2 = int(input("Select the 2nd card you want to burn: "))
+
+    card1 = select_card1 - 1 
+    card2 = select_card2 - 1 
+
+    # Add an option to ask for a 3rd card to burn 
+    #Ask the user if there's a 3rd card to burn
+
+
     firstdelete = min(card1, card2)
     if firstdelete == card2:
         card1, card2 = card2, card1
 
+    # This should be fine since all we are doing in putting them on table and reducing hand 
     if card1 < len(hand) and card2 < len(hand):
         if hand[card1][0] == hand[card2][0]:
             card_on_table.insert(0, hand[card1])
@@ -64,13 +77,7 @@ def use_power(card1, hand, card_on_table):
             print("This card does not have any power")     
 
 
-def pick_from_table(hand, card_on_table):
-
-    # Objective:
-    # When swapping the cards, swap for the actual position of that card instead of moving the whole array
-    
-
-    # Still figuring it out
+def pick_from_table(hand, card_on_table):  # Completed
     print(hand)
     select_card = int(input("What card do you want to swap?: "))
     card1 = select_card - 1
@@ -108,7 +115,7 @@ def take_card(hand, card_on_table, deck):
         return hand, card_on_table, deck
 
 
-def call(hand):
+def call(hand):  # Comleted
     for i, card in enumerate(hand):
         # Check if the card is a joker and replace it with 20
         if card[0] == 'joker':

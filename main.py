@@ -13,7 +13,7 @@ while(len(hand) != 0):
 
     print("1. Pick From the Main deck") # Re-invent call dispose from method and ask if you want to keep deck, main deck, or both.
     print("2. Swap with card on the table")
-    print("3. Burn from deck")
+    print("3. Burn from hand")
     print("4. Burn to table")
     print("5. Use Power")
     print("6. Call game")
@@ -28,6 +28,7 @@ while(len(hand) != 0):
         pass
     
     elif choice == '3':
+        game_functions.burn_from_hand()
         pass
     
     elif choice == '4':
