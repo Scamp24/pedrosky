@@ -73,12 +73,15 @@ def pick_from_table(hand, card_on_table):
     print(hand)
     select_card = int(input("What card do you want to swap?: "))
     card1 = select_card - 1
-    while (card1 >= 0 and card1 < len(hand)):  
+    if (card1 > 0 and card1 < len(hand)):  # You are picking a card above 0 Or equal to the amount of the len hand 
         hand.append(card_on_table[0])
         card_on_table.insert(0, hand[card1])
         del card_on_table[1]
         del hand[card1]
         return hand, card_on_table
+    else:
+        print("You picked a card outside of the range")
+        pick_from_table(hand, card_on_table)
          
 
 def take_card(hand, card_on_table, deck):
