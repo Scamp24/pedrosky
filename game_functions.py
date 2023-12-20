@@ -68,6 +68,8 @@ def pick_from_table(hand, card_on_table):
 
     # Current bugs for this:
     # The If we get a card out of bounds is not doing the correction 
+
+    # Still figuring it out
     print(hand)
     select_card = int(input("What card do you want to swap?: "))
     card1 = select_card - 1
