@@ -119,3 +119,5 @@ def call(hand):
     total_sum = sum(card[0] for card in hand)
     print("This is your final Sum:", total_sum)
     return total_sum
+
+# Now I added a comment 
