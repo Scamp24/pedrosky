@@ -66,18 +66,18 @@ def use_power(card1, hand, card_on_table):
 
 def pick_from_table(hand, card_on_table):
 
-    # Current bugs for this:
-    # The If we get a card out of bounds is not doing the correction 
+    # Objective:
+    # When swapping the cards, swap for the actual position of that card instead of moving the whole array
+    
 
     # Still figuring it out
     print(hand)
     select_card = int(input("What card do you want to swap?: "))
     card1 = select_card - 1
-    if (card1 > 0 and card1 < len(hand)):  # You are picking a card above 0 Or equal to the amount of the len hand 
-        hand.append(card_on_table[0])
-        card_on_table.insert(0, hand[card1])
-        del card_on_table[1]
-        del hand[card1]
+    if (card1 >= 0 and card1 < len(hand)):  
+        temp = hand[card1]
+        hand[card1] = card_on_table[0]
+        card_on_table[0] = temp
         return hand, card_on_table
     else:
         print("You picked a card outside of the range")
