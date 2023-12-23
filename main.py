@@ -8,17 +8,20 @@ card_on_table = game_functions.deal_cards(deck, 1)
 
 
 while(len(hand) != 0):
+    # [Add] Stats (Actions, Cards burned, powers used) In the future, Use counters for this)
+    # [Add] if main deck is empty then deal another game then reshuffle the main deck with the cards on table
+
     print("This is your hand:", hand)
     print("This is the card on table", card_on_table)
 
-    print("1. Pick From the Main deck") # Re-invent call dispose from method and ask if you want to keep deck, main deck, or both.
-    print("2. Swap with card on the table")
-    print("3. Burn from hand")
-    print("4. Burn to table")
-    print("5. Use Power")
-    print("6. Call game")
+    print("1. Pick From the Main deck") # [Add] Keep or drop on table | 80% 
+    print("2. Swap with card on the table") # [Completed] | 100%
+    print("3. Burn in hand") # [In Progress] | 50%
+    print("4. Burn to table") # [In Progress] | Desc: A card from my hand is the same as the card on table (Single card burn)
+    print("5. Use Power") # [In Progress]
+    print("6. Call game") # [In Progress]
 
-    choice = input("What do you want to do:")
+    choice = input("What do you want to do: ")
     if choice == '1':
         game_functions.take_card(hand, card_on_table, deck)
         pass
@@ -28,7 +31,7 @@ while(len(hand) != 0):
         pass
     
     elif choice == '3':
-        game_functions.burn_from_hand()
+        game_functions.burn_from_hand(hand, card_on_table)
         pass
     
     elif choice == '4':

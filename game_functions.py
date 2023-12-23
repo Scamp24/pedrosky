@@ -33,8 +33,18 @@ def burn(hand, main_deck, index_of_hand):
             del hand[index_of_hand]
 
 
-def burn_from_hand(card1 , card2, hand, card_on_table):
+def burn_from_hand(hand, card_on_table):
+    # Reason you can't burn within your own hand:
+    # You can't burn the less than 3 cards
+    # You don't have the same number in another card
+    # 
+    # If you have a joker, you can burn it by itself
+
+
     # In the future add a check if to see if you are able to burn
+    # Check for burn 
+
+
     print(hand)
     select_card1 = int(input("Select the 1st card you want to burn: "))
     select_card2 = int(input("Select the 2nd card you want to burn: "))
@@ -42,10 +52,10 @@ def burn_from_hand(card1 , card2, hand, card_on_table):
     card1 = select_card1 - 1 
     card2 = select_card2 - 1 
 
+
+
     # Add an option to ask for a 3rd card to burn 
     #Ask the user if there's a 3rd card to burn
-
-
     firstdelete = min(card1, card2)
     if firstdelete == card2:
         card1, card2 = card2, card1
@@ -57,6 +67,10 @@ def burn_from_hand(card1 , card2, hand, card_on_table):
             card_on_table.insert(0, hand[card2])
             del hand[card1]
             del hand[card2 - 1]
+
+
+
+    
 
 
 def use_power(card1, hand, card_on_table):
