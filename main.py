@@ -8,6 +8,7 @@ card_on_table = game_functions.deal_cards(deck, 1)
 
 
 while(len(hand) != 0):
+    # [Add] 2 arrays | 1 for place holder loop to card 1 up to < len, keep the hand array to call and update values
     # [Add] Stats (Actions, Cards burned, powers used) In the future, Use counters for this)
     # [Add] if main deck is empty then deal another game then reshuffle the main deck with the cards on table
 
