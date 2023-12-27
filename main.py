@@ -28,7 +28,7 @@ while(len(hand) != 0):
 
     choice = input("What do you want to do: ")
     if choice == '1':
-        game_functions.take_card(hand, card_on_table, deck)
+        game_functions.take_card(hand, card_on_table, deck, placeholder)
         pass
 
     elif choice == '2':

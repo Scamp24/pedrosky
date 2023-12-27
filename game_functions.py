@@ -58,7 +58,7 @@ def burn_from_hand(hand, card_on_table, placeholder):
     # 2nd Check | A joker can be burnt by itself if selected
     if hand[card1][0] == 'joker':
         card_on_table.insert(0, hand[card1])
-        del hand[card1]
+        hand[card1] == ''
 
     # How many cards to burn? 2 or 3?
     elif (card1 >= 0 and card1 < len(hand)):
@@ -68,6 +68,9 @@ def burn_from_hand(hand, card_on_table, placeholder):
         if another_card == "yes": # Player decided to burn 3 cards at a time
             if len(placeholder) < 4:
                 return print("Unable to burn, you must have at least 1 card remaining after burning")
+            
+            if select_card1 == select_card2 or select_card2 == select_card3 or select_card1 == select_card3:
+                return print("You picked the same card twice, try again")
             
             select_card2 = int(input("Select the 2nd card you want to burn: "))
             # 4th Checking bounds of cards after 1 | Card 2
@@ -97,6 +100,9 @@ def burn_from_hand(hand, card_on_table, placeholder):
         
         else: # Meaning that player decided to only burn 2 
             select_card2 = int(input("Select the 2nd card you want to burn: "))
+            if select_card2 == select_card1:
+                return print("You picked the same card twice, try again")
+            
             # 4th Checking bounds of cards after | Card 2 
             if (select_card2 - 1) >= 0 and (select_card2 - 1) < len(hand):
                 card2 = select_card2 - 1  
@@ -143,8 +149,6 @@ def pick_from_table(hand, card_on_table):  # Completed
     select_card = int(input("What card do you want to swap?: "))
     card1 = select_card - 1
     if (card1 >= 0 and card1 < len(hand)):
-        # if hand[card1] == "":
-
         temp = hand[card1]
         hand[card1] = card_on_table[0]
         card_on_table[0] = temp
@@ -154,7 +158,7 @@ def pick_from_table(hand, card_on_table):  # Completed
         pick_from_table(hand, card_on_table)
          
 
-def take_card(hand, card_on_table, deck):  # Completed
+def take_card(hand, card_on_table, deck, placeholder):  # Completed
     print("You got: ", deck[0])
     
     print("1. Swap a card in your hand")
@@ -166,13 +170,17 @@ def take_card(hand, card_on_table, deck):  # Completed
             select_card = int(input("What card do you want to pick?: "))
             card1 = select_card - 1
             if card1 >= 0 and card1 < len(hand):
+                if hand[card1] == '':
+                    print("Card picked is not within range, try again")
+                    take_card(hand, card_on_table, deck, placeholder)
+
                 temp = hand[card1]
                 hand[card1] = deck[0]
                 card_on_table.insert(0, temp)
                 del deck[0]
             else:
                 print("Card picked is not within range, try again")
-                take_card(hand, card_on_table, deck)
+                take_card(hand, card_on_table, deck, placeholder)
 
     elif(pick == 2):
         print("You drop the card")
