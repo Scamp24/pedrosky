@@ -136,38 +136,33 @@ def pick_from_table(hand, card_on_table):  # Completed
         pick_from_table(hand, card_on_table)
          
 
-def take_card(hand, card_on_table, deck):
-    
-    hand.append(deck[0])
-    print("You got:", deck[0])
-    #Should not be here
-    del deck[0]
+def take_card(hand, card_on_table, deck):  # Testing 
+    print("You got: ", deck[0])
     
     print("1. Swap a card in your hand")
     print("2. Drop")
     pick = int(input("Your option: "))
-    while(pick > 0 and pick < 3):
-        if(pick == 1):
-                print(hand)
-                valid_selection: False
+    
+    if(pick == 1):
+            print(hand)
+            select_card = int(input("What card do you want to pick?: "))
+            card1 = select_card - 1
+            if card1 >= 0 and card1 < len(hand):
+                temp = hand[card1]
+                hand[card1] = deck[0]
+                card_on_table.insert(0, temp)
+                del deck[0]
+            else:
+                print("Card picked is not within range, try again")
+                take_card(hand, card_on_table, deck)
 
-                while not valid_selection:
-                    select_card = int(input("What card do you want to pick?: "))
-                    card1 = select_card - 1
-                    if card1 >= 0 and card1 < len(hand):
-                        temp = hand[card1]
-                        hand[card1] = deck[0]
-                        card_on_table.insert(0, temp)
-                        del deck[0]
-                        valid_selection = True
-                    else:
-                        print("Card picked is not within range, try again")
-        elif(pick == 2):
-            print("You drop the card")
-            card_on_table.insert(0, deck[0])
-            del deck[0]
-        else:
-            print("Not a valid a option")
+    elif(pick == 2):
+        print("You drop the card")
+        card_on_table.insert(0, deck[0])
+        del deck[0]
+    else:
+        print("Not a valid a option")
+        take_card(hand, card_on_table, deck)
 
 
 def call(hand):  # Completed
@@ -184,5 +179,3 @@ def call(hand):  # Completed
     total_sum = sum(card[0] for card in hand)
     print("This is your final Sum:", total_sum)
     return total_sum
-
-# Now I added a comment 
