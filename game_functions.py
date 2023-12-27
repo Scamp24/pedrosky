@@ -39,10 +39,7 @@ def burn_from_hand(hand, card_on_table):
         return print("Unable to burn, you must have at least 1 card remaining on your hand")
     
     # Reason you can't burn within your own hand:
-    # You can't burn the less than 3 cards
     # You don't have the same number in another card
-    # 
-    # If you have a joker, you can burn it by itself
 
 
     # In the future add a check if to see if you are able to burn
@@ -53,33 +50,45 @@ def burn_from_hand(hand, card_on_table):
     select_card1 = int(input("Select the 1st card you want to burn: "))
     card1 = select_card1 - 1 
 
+    # 2nd Check | A joker can be burnt by itself if selected
     if hand[card1][0] == 'joker':
         card_on_table.insert(0, hand[card1])
         del hand[card1]
 
+    # How many cards to burn? 2 or 3?
     elif (card1 >= 0 and card1 < len(hand)):
         another_card = (input("Is there a 3rd card? "))
         another_card.lower()
 
-        if another_card == "yes":
-            # do Something
-        
-        else:
+        if another_card == "yes": # Players decided to burn 3 cards at a time
             select_card2 = int(input("Select the 2nd card you want to burn: "))
-            card2 = select_card2 - 1 
-            firstdelete = min(card1, card2)
-            if firstdelete == card2:
-                card1, card2 = card2, card1
+            card2 = select_card2 - 1  #Add an out bounds check
+
+            select_card3 = int(input("Select the 3rd card you want to burn: "))
+            card3 = select_card3 - 1 #Add an out of bounds check
 
             # This should be fine since all we are doing in putting them on table and reducing hand 
-            if card1 < len(hand) and card2 < len(hand):
-                if hand[card1][0] == hand[card2][0]:
-                    card_on_table.insert(0, hand[card1])
-                    card_on_table.insert(0, hand[card2])
-                    del hand[card1]
-                    del hand[card2]
-    
-    
+            if hand[card1][0] == hand[card2][0] and hand[card1][0] == hand[card3][0]:
+                card_on_table.insert(0, hand[card1])
+                card_on_table.insert(0, hand[card2])
+                card_on_table.insert(0, hand[card3])
+                del hand[card1]
+                del hand[card2]
+                del hand[card3]
+            else:
+                return print("One of the cards you selected does not match")
+        
+        else: # Meaning that player decided to only burn 2 
+            select_card2 = int(input("Select the 2nd card you want to burn: "))
+            card2 = select_card2 - 1  #Add an out bounds check
+
+            if hand[card1][0] == hand[card2][0]:
+                card_on_table.insert(0, hand[card1])
+                card_on_table.insert(0, hand[card2])
+                del hand[card1]
+                del hand[card2]
+            else:
+                return print("One of the cards you selected does not match")
     else: 
         return print("The card you selected is not in your hand, Try again")
 
