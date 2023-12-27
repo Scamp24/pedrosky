@@ -23,7 +23,7 @@ def deal_cards(deck, num_cards):
 
 def emptyDeck(deck, card_on_table): # Not tested
     deck = random.shuffle(card_on_table)
-    card_on_table.empty()
+    card_on_table.clear()
     card_on_table.insert(0, deck[0])
     del deck[0]
     return deck, card_on_table

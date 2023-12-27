@@ -15,9 +15,9 @@ while(len(hand) != 0):
     print("This is your hand:", hand)
     print("This is the card on table", card_on_table)
 
-    print("1. Pick From the Main deck") # [Add] Keep or drop on table | 80% 
+    print("1. Pick From the Main deck") # [Completed] | 100% 
     print("2. Swap with card on the table") # [Completed] | 100%
-    print("3. Burn in hand") # [In Progress] | 100%, Test pending
+    print("3. Burn in hand") # [In Progress] | 100% | Bug Fixing - Currently in testing
     print("4. Burn to table") # [In Progress] | Desc: A card from my hand is the same as the card on table (Single card burn)
     print("5. Use Power") # [In Progress]
     print("6. Call game") # [In Progress]
