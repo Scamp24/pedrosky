@@ -38,14 +38,6 @@ def burn_from_hand(hand, card_on_table):
     if len(hand) < 3:
         return print("Unable to burn, you must have at least 1 card remaining on your hand")
     
-    # Reason you can't burn within your own hand:
-    # You don't have the same number in another card
-
-
-    # In the future add a check if to see if you are able to burn
-    # Check for burn 
-
-
     print(hand)
     select_card1 = int(input("Select the 1st card you want to burn: "))
     card1 = select_card1 - 1 
@@ -62,12 +54,20 @@ def burn_from_hand(hand, card_on_table):
 
         if another_card == "yes": # Players decided to burn 3 cards at a time
             select_card2 = int(input("Select the 2nd card you want to burn: "))
-            card2 = select_card2 - 1  #Add an out bounds check
+            # 4th Checking bounds of cards after 1 | Card 2
+            if (select_card2 - 1) >= 0 and (select_card2 - 1) < len(hand):
+                card2 = select_card2 - 1  #Add an out bounds check
+            else:
+                return print("Your 2nd pick is not within your hand")
 
             select_card3 = int(input("Select the 3rd card you want to burn: "))
-            card3 = select_card3 - 1 #Add an out of bounds check
+            # 4th Checking bounds of cards after 1 | Card 3
+            if (select_card3 - 1) >= 0 and (select_card3 - 1) < len(hand):
+                card3 = select_card3 - 1  #Add an out of bounds check
+            else:
+                return print("Your 3rd pick is not within your hand")
 
-            # This should be fine since all we are doing in putting them on table and reducing hand 
+            # 3rd Check | Matching numbers  
             if hand[card1][0] == hand[card2][0] and hand[card1][0] == hand[card3][0]:
                 card_on_table.insert(0, hand[card1])
                 card_on_table.insert(0, hand[card2])
@@ -80,9 +80,14 @@ def burn_from_hand(hand, card_on_table):
         
         else: # Meaning that player decided to only burn 2 
             select_card2 = int(input("Select the 2nd card you want to burn: "))
-            card2 = select_card2 - 1  #Add an out bounds check
+            # 4th Checking bounds of cards after | Card 2 
+            if (select_card2 - 1) >= 0 and (select_card2 - 1) < len(hand):
+                card2 = select_card2 - 1  #Add an out bounds check
+            else:
+                return print("Your 2nd pick is not within your hand")
 
             if hand[card1][0] == hand[card2][0]:
+                # 3rd Check | Matching numbers 
                 card_on_table.insert(0, hand[card1])
                 card_on_table.insert(0, hand[card2])
                 del hand[card1]
