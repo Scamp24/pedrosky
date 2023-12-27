@@ -22,6 +22,13 @@ def deal_cards(deck, num_cards):
     return hand
 
 
+def emptyDeck(deck, card_on_table): # Not tested
+    deck = random.shuffle(card_on_table)
+    card_on_table.empty()
+    card_on_table.insert(0, deck[0])
+    del deck[0]
+    return deck, card_on_table
+
 def burn(hand, main_deck, index_of_hand):
     if index_of_hand < len(hand):
         if hand[index_of_hand][0] == 'joker':  # Check if the card in the hand at the specified index is a Joker
@@ -136,7 +143,7 @@ def pick_from_table(hand, card_on_table):  # Completed
         pick_from_table(hand, card_on_table)
          
 
-def take_card(hand, card_on_table, deck):  # Testing 
+def take_card(hand, card_on_table, deck):  # Completed
     print("You got: ", deck[0])
     
     print("1. Swap a card in your hand")
