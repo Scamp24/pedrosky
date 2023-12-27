@@ -153,7 +153,7 @@ def take_card(hand, card_on_table, deck):
         return hand, card_on_table, deck
 
 
-def call(hand):  # Comleted
+def call(hand):  # Completed
     for i, card in enumerate(hand):
         # Check if the card is a joker and replace it with 20
         if card[0] == 'joker':

@@ -17,7 +17,7 @@ while(len(hand) != 0):
 
     print("1. Pick From the Main deck") # [Add] Keep or drop on table | 80% 
     print("2. Swap with card on the table") # [Completed] | 100%
-    print("3. Burn in hand") # [In Progress] | 50%
+    print("3. Burn in hand") # [In Progress] | 80%, Test pending
     print("4. Burn to table") # [In Progress] | Desc: A card from my hand is the same as the card on table (Single card burn)
     print("5. Use Power") # [In Progress]
     print("6. Call game") # [In Progress]
@@ -46,13 +46,9 @@ while(len(hand) != 0):
         print("Your final hand was:", hand)
         hand.clear()
         pass
+    else: 
+        print("That is not an option, please try again")
     
-
-        
-
-
-# So this works
-
 
             
 #burn(hand, card_on_table, 1)
@@ -61,9 +57,6 @@ while(len(hand) != 0):
 # print("Card on table is this:", card_on_table)
 
 
-
-
-# burn_from_hand(0,2)
      
     
 # use_power(1)
@@ -79,14 +72,7 @@ while(len(hand) != 0):
 
 
 
-# take_card(1,0)
 
-#print("This is your hand after picking from main deck", hand)
-# print("Card on table is this:", card_on_table)
-
-
-
-# print(f"This is your final score:", call())
 
 
 
