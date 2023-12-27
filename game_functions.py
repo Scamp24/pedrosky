@@ -56,14 +56,14 @@ def burn_from_hand(hand, card_on_table):
             select_card2 = int(input("Select the 2nd card you want to burn: "))
             # 4th Checking bounds of cards after 1 | Card 2
             if (select_card2 - 1) >= 0 and (select_card2 - 1) < len(hand):
-                card2 = select_card2 - 1  #Add an out bounds check
+                card2 = select_card2 - 1  
             else:
                 return print("Your 2nd pick is not within your hand")
 
             select_card3 = int(input("Select the 3rd card you want to burn: "))
             # 4th Checking bounds of cards after 1 | Card 3
             if (select_card3 - 1) >= 0 and (select_card3 - 1) < len(hand):
-                card3 = select_card3 - 1  #Add an out of bounds check
+                card3 = select_card3 - 1  
             else:
                 return print("Your 3rd pick is not within your hand")
             
@@ -83,7 +83,7 @@ def burn_from_hand(hand, card_on_table):
             select_card2 = int(input("Select the 2nd card you want to burn: "))
             # 4th Checking bounds of cards after | Card 2 
             if (select_card2 - 1) >= 0 and (select_card2 - 1) < len(hand):
-                card2 = select_card2 - 1  #Add an out bounds check
+                card2 = select_card2 - 1  
             else:
                 return print("Your 2nd pick is not within your hand")
 
@@ -140,24 +140,34 @@ def take_card(hand, card_on_table, deck):
     
     hand.append(deck[0])
     print("You got:", deck[0])
+    #Should not be here
     del deck[0]
     
-    print("1. Keep and dispose")
-    print("2. Keep only")
-    dispose = int(input("Your option: "))
-    while(dispose > 0 and dispose < 3):
-        if(dispose == 1):
+    print("1. Swap a card in your hand")
+    print("2. Drop")
+    pick = int(input("Your option: "))
+    while(pick > 0 and pick < 3):
+        if(pick == 1):
                 print(hand)
-                select_card = int(input("What card do you want to dispose?: "))
-                card1 = select_card - 1
-                if card1 < len(hand):
-                    card_on_table.insert(0, hand[card1])
-                    del hand[card1]
-        elif(dispose == 2):
-            print("You've kept the card")
+                valid_selection: False
+
+                while not valid_selection:
+                    select_card = int(input("What card do you want to pick?: "))
+                    card1 = select_card - 1
+                    if card1 >= 0 and card1 < len(hand):
+                        temp = hand[card1]
+                        hand[card1] = deck[0]
+                        card_on_table.insert(0, temp)
+                        del deck[0]
+                        valid_selection = True
+                    else:
+                        print("Card picked is not within range, try again")
+        elif(pick == 2):
+            print("You drop the card")
+            card_on_table.insert(0, deck[0])
+            del deck[0]
         else:
             print("Not a valid a option")
-        return hand, card_on_table, deck
 
 
 def call(hand):  # Completed
