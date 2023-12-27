@@ -66,7 +66,8 @@ def burn_from_hand(hand, card_on_table):
                 card3 = select_card3 - 1  #Add an out of bounds check
             else:
                 return print("Your 3rd pick is not within your hand")
-
+            
+            #Current Bug: At the time of deleting the card from the hand, the index gets moved
             # 3rd Check | Matching numbers  
             if hand[card1][0] == hand[card2][0] and hand[card1][0] == hand[card3][0]:
                 card_on_table.insert(0, hand[card1])
@@ -86,6 +87,7 @@ def burn_from_hand(hand, card_on_table):
             else:
                 return print("Your 2nd pick is not within your hand")
 
+            #Current Bug: At the time of deleting the card from the hand, the index gets moved
             if hand[card1][0] == hand[card2][0]:
                 # 3rd Check | Matching numbers 
                 card_on_table.insert(0, hand[card1])
