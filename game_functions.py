@@ -52,7 +52,7 @@ def burn_from_hand(hand, card_on_table):
         another_card = (input("Is there a 3rd card? "))
         another_card.lower()
 
-        if another_card == "yes": # Players decided to burn 3 cards at a time
+        if another_card == "yes": # Player decided to burn 3 cards at a time
             select_card2 = int(input("Select the 2nd card you want to burn: "))
             # 4th Checking bounds of cards after 1 | Card 2
             if (select_card2 - 1) >= 0 and (select_card2 - 1) < len(hand):
