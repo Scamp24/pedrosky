@@ -34,6 +34,10 @@ def burn(hand, main_deck, index_of_hand):
 
 
 def burn_from_hand(hand, card_on_table):
+    # 1st check | Unable to burn if you have less than 3 cards
+    if len(hand) < 3:
+        return print("Unable to burn, you must have at least 1 card remaining on your hand")
+    
     # Reason you can't burn within your own hand:
     # You can't burn the less than 3 cards
     # You don't have the same number in another card
@@ -47,26 +51,37 @@ def burn_from_hand(hand, card_on_table):
 
     print(hand)
     select_card1 = int(input("Select the 1st card you want to burn: "))
-    select_card2 = int(input("Select the 2nd card you want to burn: "))
-
     card1 = select_card1 - 1 
-    card2 = select_card2 - 1 
 
+    if hand[card1][0] == 'joker':
+        card_on_table.insert(0, hand[card1])
+        del hand[card1]
 
+    elif (card1 >= 0 and card1 < len(hand)):
+        another_card = (input("Is there a 3rd card? "))
+        another_card.lower()
 
-    # Add an option to ask for a 3rd card to burn 
-    #Ask the user if there's a 3rd card to burn
-    firstdelete = min(card1, card2)
-    if firstdelete == card2:
-        card1, card2 = card2, card1
+        if another_card == "yes":
+            # do Something
+        
+        else:
+            select_card2 = int(input("Select the 2nd card you want to burn: "))
+            card2 = select_card2 - 1 
+            firstdelete = min(card1, card2)
+            if firstdelete == card2:
+                card1, card2 = card2, card1
 
-    # This should be fine since all we are doing in putting them on table and reducing hand 
-    if card1 < len(hand) and card2 < len(hand):
-        if hand[card1][0] == hand[card2][0]:
-            card_on_table.insert(0, hand[card1])
-            card_on_table.insert(0, hand[card2])
-            del hand[card1]
-            del hand[card2 - 1]
+            # This should be fine since all we are doing in putting them on table and reducing hand 
+            if card1 < len(hand) and card2 < len(hand):
+                if hand[card1][0] == hand[card2][0]:
+                    card_on_table.insert(0, hand[card1])
+                    card_on_table.insert(0, hand[card2])
+                    del hand[card1]
+                    del hand[card2]
+    
+    
+    else: 
+        return print("The card you selected is not in your hand, Try again")
 
 
 
