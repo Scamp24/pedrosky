@@ -4,7 +4,6 @@ def Create_new_deck():
     symbols = ['Swords', 'Cups', 'Coins', 'Clubs']
     #Defining the numbers per symbol
     numbers = list(range(1, 13))
-    # Making an array? with number and symbol in each instance of the array
     standard_cards = [(number, symbol) for symbol in symbols for number in numbers]
     jokers = [('joker', 'Standard'), ('joker', 'Standard')]
     deck = standard_cards + jokers
