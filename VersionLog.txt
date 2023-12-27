@@ -2,4 +2,7 @@
 
 Current updates to the logic. Adding a placeholder array to keep up with the "Player memorization of the cards"
 
+0.0.1 | Dec 27th, 2023
+
+Added placeholder array for cards and futher bug mitigation
 
