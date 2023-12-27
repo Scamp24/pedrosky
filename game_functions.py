@@ -55,10 +55,13 @@ def burn_from_hand(hand, card_on_table, placeholder):
     select_card1 = int(input("Select the 1st card you want to burn: "))
     card1 = select_card1 - 1 
 
+    if hand[card1] == '':
+        return print("Card picked is not within range, try again")
+
     # 2nd Check | A joker can be burnt by itself if selected
     if hand[card1][0] == 'joker':
         card_on_table.insert(0, hand[card1])
-        hand[card1] == ''
+        hand[card1] = ''
 
     # How many cards to burn? 2 or 3?
     elif (card1 >= 0 and card1 < len(hand)):
