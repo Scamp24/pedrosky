@@ -1,5 +1,12 @@
 import random
 
+def placeholder_array(hand):
+    placeholder = []
+    for index, element in enumerate(hand):
+        if isinstance(element, tuple):
+            placeholder.append(f"Card {index + 1}")
+    return placeholder
+
 def Create_new_deck():   
     symbols = ['Swords', 'Cups', 'Coins', 'Clubs']
     #Defining the numbers per symbol
@@ -39,10 +46,10 @@ def burn(hand, main_deck, index_of_hand):
             del hand[index_of_hand]
 
 
-def burn_from_hand(hand, card_on_table):
+def burn_from_hand(hand, card_on_table, placeholder):
     # 1st check | Unable to burn if you have less than 3 cards
-    if len(hand) < 3:
-        return print("Unable to burn, you must have at least 1 card remaining on your hand")
+    if len(placeholder) < 3:
+        return print("Unable to burn, you must have at least 1 card remaining after burning")
     
     print(hand)
     select_card1 = int(input("Select the 1st card you want to burn: "))
@@ -59,6 +66,9 @@ def burn_from_hand(hand, card_on_table):
         another_card.lower()
 
         if another_card == "yes": # Player decided to burn 3 cards at a time
+            if len(placeholder) < 4:
+                return print("Unable to burn, you must have at least 1 card remaining after burning")
+            
             select_card2 = int(input("Select the 2nd card you want to burn: "))
             # 4th Checking bounds of cards after 1 | Card 2
             if (select_card2 - 1) >= 0 and (select_card2 - 1) < len(hand):
@@ -79,9 +89,9 @@ def burn_from_hand(hand, card_on_table):
                 card_on_table.insert(0, hand[card1])
                 card_on_table.insert(0, hand[card2])
                 card_on_table.insert(0, hand[card3])
-                del hand[card1]
-                del hand[card2]
-                del hand[card3]
+                hand[card1] = ''
+                hand[card2] = ''
+                hand[card3] = ''
             else:
                 return print("One of the cards you selected does not match")
         
@@ -98,8 +108,8 @@ def burn_from_hand(hand, card_on_table):
                 # 3rd Check | Matching numbers 
                 card_on_table.insert(0, hand[card1])
                 card_on_table.insert(0, hand[card2])
-                del hand[card1]
-                del hand[card2]
+                hand[card1] = ''
+                hand[card2] = ''
             else:
                 return print("One of the cards you selected does not match")
     else: 
@@ -132,7 +142,9 @@ def pick_from_table(hand, card_on_table):  # Completed
     print(hand)
     select_card = int(input("What card do you want to swap?: "))
     card1 = select_card - 1
-    if (card1 >= 0 and card1 < len(hand)):  
+    if (card1 >= 0 and card1 < len(hand)):
+        # if hand[card1] == "":
+
         temp = hand[card1]
         hand[card1] = card_on_table[0]
         card_on_table[0] = temp
@@ -171,7 +183,7 @@ def take_card(hand, card_on_table, deck):  # Completed
         take_card(hand, card_on_table, deck)
 
 
-def call(hand):  # Completed
+def call(hand):  # Current bug: Index goes of of bounds with Joker 
     for i, card in enumerate(hand):
         # Check if the card is a joker and replace it with 20
         if card[0] == 'joker':
