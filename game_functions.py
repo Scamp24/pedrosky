@@ -46,7 +46,7 @@ def burn(hand, main_deck, index_of_hand):
             del hand[index_of_hand]
 
 
-def burn_from_hand(hand, card_on_table, placeholder):
+def burn_from_hand(hand, card_on_table, placeholder): # Completed 
     # 1st check | Unable to burn if you have less than 3 cards
     if len(placeholder) < 3:
         return print("Unable to burn, you must have at least 1 card remaining after burning")
@@ -112,7 +112,6 @@ def burn_from_hand(hand, card_on_table, placeholder):
             else:
                 return print("Your 2nd pick is not within your hand")
 
-            #Current Bug: At the time of deleting the card from the hand, the index gets moved
             if hand[card1][0] == hand[card2][0]:
                 # 3rd Check | Matching numbers 
                 card_on_table.insert(0, hand[card1])
@@ -151,13 +150,18 @@ def pick_from_table(hand, card_on_table):  # Completed
     print(hand)
     select_card = int(input("What card do you want to swap?: "))
     card1 = select_card - 1
+
+    if hand[card1] == '':
+        print("Card picked is not within range, try again")
+        pick_from_table(hand, card_on_table)
+
     if (card1 >= 0 and card1 < len(hand)):
         temp = hand[card1]
         hand[card1] = card_on_table[0]
         card_on_table[0] = temp
         return hand, card_on_table
     else:
-        print("You picked a card outside of the range")
+        print("Card picked is not within range, try again")
         pick_from_table(hand, card_on_table)
          
 
