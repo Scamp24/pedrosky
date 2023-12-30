@@ -42,19 +42,27 @@ def burn_to_table(hand, card_on_table, placeholder):
     select_card1 = int(input("Select the 1st card you want to burn: "))
     card1 = select_card1 - 1 
 
+    if hand[card1] == '':
+        return print("Card picked is not within range, try again")
+
     if hand[card1][0] == 'joker':
         card_on_table.insert(0, hand[card1])
         hand[card1] = ''
 
-    if hand[card1] == card_on_table[0]:
+    elif hand[card1] == card_on_table[0]:
         choice = int(input("How many cards are your burning? 2 or 3?"))
 
         if choice == '2':
-            burn_2_cards(select_card1,card1, hand, card_on_table)
+            if len(placeholder) < 3:
+                print("Not enough card to burn 2 cards")
+            else:
+                burn_2_cards(select_card1,card1, hand, card_on_table)
 
         elif choice == '3':
-            burn_3_cards(select_card1,card1, hand, card_on_table)
-            
+            if len(placeholder) < 4:
+                print("Not enough cards to burn 3")
+            else:
+                burn_3_cards(select_card1,card1, hand, card_on_table)
         else: 
             print("That is not within your card range")
     else:
@@ -83,10 +91,34 @@ def burn_2_cards(select_card1, card1, hand, card_on_table):
         return print("One of the cards you selected does not match")
 
 
-
-
 def burn_3_cards(select_card1, card1, hand, card_on_table):
-    return
+    select_card2 = int(input("Select the 2nd card you want to burn: "))
+        # Checking bounds of cards after 1 | Card 2
+    if (select_card2 - 1) >= 0 and (select_card2 - 1) < len(hand):
+        card2 = select_card2 - 1  
+    else:
+        return print("Your 2nd pick is not within your hand")
+    
+    select_card3 = int(input("Select the 3rd card you want to burn: "))
+    # 4th Checking bounds of cards after 1 | Card 3
+    if (select_card3 - 1) >= 0 and (select_card3 - 1) < len(hand):
+        card3 = select_card3 - 1  
+    else:
+        return print("Your 3rd pick is not within your hand")
+            
+    if select_card1 == select_card2 or select_card2 == select_card3 or select_card1 == select_card3:
+        return print("You picked the same card twice, try again")
+            
+    # Check | Matching numbers  
+    if hand[card1][0] == hand[card2][0] and hand[card1][0] == hand[card3][0]:
+        card_on_table.insert(0, hand[card1])
+        card_on_table.insert(0, hand[card2])
+        card_on_table.insert(0, hand[card3])
+        hand[card1] = ''
+        hand[card2] = ''
+        hand[card3] = ''
+    else:
+        return print("One of the cards you selected does not match")
 
 
 def burn_from_hand(hand, card_on_table, placeholder): # Completed 
@@ -108,61 +140,21 @@ def burn_from_hand(hand, card_on_table, placeholder): # Completed
 
     # How many cards to burn? 2 or 3?
     elif (card1 >= 0 and card1 < len(hand)):
-        another_card = (input("Is there a 3rd card? "))
-        another_card.lower()
+        choice = int(input("How many cards are your burning? 2 or 3?"))
+       
+        if choice == '2':
+            if len(placeholder) < 3:
+                print("Not enough card to burn 2 cards")
+            else:
+                burn_2_cards(select_card1,card1, hand, card_on_table)
 
-        if another_card == "yes": # Player decided to burn 3 cards at a time
+        elif choice == '3':
             if len(placeholder) < 4:
-                return print("Unable to burn, you must have at least 1 card remaining after burning")
-            
-            if select_card1 == select_card2 or select_card2 == select_card3 or select_card1 == select_card3:
-                return print("You picked the same card twice, try again")
-            
-            select_card2 = int(input("Select the 2nd card you want to burn: "))
-            # 4th Checking bounds of cards after 1 | Card 2
-            if (select_card2 - 1) >= 0 and (select_card2 - 1) < len(hand):
-                card2 = select_card2 - 1  
+                print("Not enough cards to burn 3")
             else:
-                return print("Your 2nd pick is not within your hand")
-
-            select_card3 = int(input("Select the 3rd card you want to burn: "))
-            # 4th Checking bounds of cards after 1 | Card 3
-            if (select_card3 - 1) >= 0 and (select_card3 - 1) < len(hand):
-                card3 = select_card3 - 1  
-            else:
-                return print("Your 3rd pick is not within your hand")
-            
-            #Current Bug: At the time of deleting the card from the hand, the index gets moved
-            # 3rd Check | Matching numbers  
-            if hand[card1][0] == hand[card2][0] and hand[card1][0] == hand[card3][0]:
-                card_on_table.insert(0, hand[card1])
-                card_on_table.insert(0, hand[card2])
-                card_on_table.insert(0, hand[card3])
-                hand[card1] = ''
-                hand[card2] = ''
-                hand[card3] = ''
-            else:
-                return print("One of the cards you selected does not match")
-        
-        else: # Meaning that player decided to only burn 2 
-            select_card2 = int(input("Select the 2nd card you want to burn: "))
-            if select_card2 == select_card1:
-                return print("You picked the same card twice, try again")
-            
-            # 4th Checking bounds of cards after | Card 2 
-            if (select_card2 - 1) >= 0 and (select_card2 - 1) < len(hand):
-                card2 = select_card2 - 1  
-            else:
-                return print("Your 2nd pick is not within your hand")
-
-            if hand[card1][0] == hand[card2][0]:
-                # 3rd Check | Matching numbers 
-                card_on_table.insert(0, hand[card1])
-                card_on_table.insert(0, hand[card2])
-                hand[card1] = ''
-                hand[card2] = ''
-            else:
-                return print("One of the cards you selected does not match")
+                burn_3_cards(select_card1,card1, hand, card_on_table)
+        else: 
+            print("That is not within your card range")         
     else: 
         return print("The card you selected is not in your hand, Try again")
 

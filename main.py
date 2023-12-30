@@ -24,7 +24,7 @@ while(len(placeholder) != 0):
     print("3. Burn in hand") # [Completed] | 100% 
     print("4. Burn to table") # [In Progress] | Desc: A card from my hand is the same as the card on table (Single card burn)
     print("5. Use Power") # [In Progress]
-    print("6. Call game") # [In Progress]
+    print("6. Call game") # [In Progress] | Broken, yet to look for the bug
 
     choice = input("What do you want to do: ")
     if choice == '1':
