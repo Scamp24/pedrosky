@@ -35,15 +35,58 @@ def emptyDeck(deck, card_on_table): # Not tested
     del deck[0]
     return deck, card_on_table
 
-def burn(hand, main_deck, index_of_hand):
-    if index_of_hand < len(hand):
-        if hand[index_of_hand][0] == 'joker':  # Check if the card in the hand at the specified index is a Joker
-            main_deck.insert(0, hand[index_of_hand])
-            del hand[index_of_hand]
+def burn_to_table(hand, card_on_table, placeholder):
+    if len(placeholder) < 2:
+        return print("Unable to burn, you must have at least 1 card remaining after burning")
 
-        elif hand[index_of_hand][0] == main_deck[0][0]:  # Compare the selected card from hand to the first card in the main deck
-            main_deck.insert(0, hand[index_of_hand])  # Re-add the matched card to the top of the deck\
-            del hand[index_of_hand]
+    select_card1 = int(input("Select the 1st card you want to burn: "))
+    card1 = select_card1 - 1 
+
+    if hand[card1][0] == 'joker':
+        card_on_table.insert(0, hand[card1])
+        hand[card1] = ''
+
+    if hand[card1] == card_on_table[0]:
+        choice = int(input("How many cards are your burning? 2 or 3?"))
+
+        if choice == '2':
+            burn_2_cards(select_card1,card1, hand, card_on_table)
+
+        elif choice == '3':
+            burn_3_cards(select_card1,card1, hand, card_on_table)
+            
+        else: 
+            print("That is not within your card range")
+    else:
+        print("The selected does not match the card on table")
+
+        
+
+def burn_2_cards(select_card1, card1, hand, card_on_table):
+    select_card2 = int(input("Select the 2nd card you want to burn: "))
+    if select_card2 == select_card1:
+        return print("You picked the same card twice, try again")
+            
+    # 4th Checking bounds of cards after | Card 2 
+    if (select_card2 - 1) >= 0 and (select_card2 - 1) < len(hand):
+        card2 = select_card2 - 1  
+    else:
+        return print("Your 2nd pick is not within your hand")
+
+    if hand[card1][0] == hand[card2][0]:
+    # 3rd Check | Matching numbers 
+        card_on_table.insert(0, hand[card1])
+        card_on_table.insert(0, hand[card2])
+        hand[card1] = ''
+        hand[card2] = ''
+    else:
+        return print("One of the cards you selected does not match")
+
+
+
+
+def burn_3_cards(select_card1, card1, hand, card_on_table):
+    return
 
 
 def burn_from_hand(hand, card_on_table, placeholder): # Completed 
@@ -122,10 +165,6 @@ def burn_from_hand(hand, card_on_table, placeholder): # Completed
                 return print("One of the cards you selected does not match")
     else: 
         return print("The card you selected is not in your hand, Try again")
-
-
-
-    
 
 
 def use_power(card1, hand, card_on_table):
