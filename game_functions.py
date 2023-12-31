@@ -16,17 +16,24 @@ def Create_new_deck():
     deck = standard_cards + jokers
     return deck
 
-
 def new_game(hand):
     print("\n You are allowed to see 2 cards once")
 
-    select_card1 = int(input("Select the card you want to see, Card: ", ))
-    card1 = select_card1 - 1 
+    try:
+        select_card1 = int(input("Select the card you want to see, Card: "))
+        card1 = select_card1 - 1
+    except ValueError:
+        print("\n Invalid, input a number \n")
+        return new_game(hand)
 
     if (card1 >= 0 and card1 < len(hand)):
-        select_card2 = int(input("Select another card you want to see, Card: "))
-        print("")
-        card2 = select_card2 - 1 
+        try:
+            select_card2 = int(input("Select another card you want to see, Card: "))
+            print("")
+            card2 = select_card2 - 1 
+        except ValueError:
+            print("\n Invalid, input a number \n")
+            return new_game(hand)
         
         if (card2 >= 0 and card2 <len(hand)) and card1 != card2:
             print("Card ", select_card1, "is ", hand[card1])
@@ -61,8 +68,11 @@ def burn(hand, card_on_table, placeholder):
     if len(placeholder) < 2:
         return print("\n Unable to burn, you must have at least 1 card remaining after burning \n")
     
-    select_card1 = int(input("Select the 1st card you want to burn: "))
-    card1 = select_card1 - 1 
+    try:
+        select_card1 = int(input("Select the 1st card you want to burn: "))
+        card1 = select_card1 - 1 
+    except ValueError:
+        return print("\n Invalid, input a number \n")
 
     if hand[card1] == '':
         return print("\n Card picked is not within range, try again \n")
@@ -95,7 +105,11 @@ def burn(hand, card_on_table, placeholder):
             print("That is not within your card range")
 
 def burn_2_cards(select_card1, card1, hand, card_on_table):
-    select_card2 = int(input("Select the 2nd card you want to burn: "))
+    try:
+        select_card2 = int(input("Select the 2nd card you want to burn: "))
+    except ValueError:
+        return print("\n Invalid, input a number \n")
+    
     if select_card2 == select_card1:
         return print("\n You picked the same card twice, try again \n")
             
@@ -116,14 +130,20 @@ def burn_2_cards(select_card1, card1, hand, card_on_table):
 
 
 def burn_3_cards(select_card1, card1, hand, card_on_table):
-    select_card2 = int(input("Select the 2nd card you want to burn: "))
+    try:
+        select_card2 = int(input("Select the 2nd card you want to burn: "))
+    except ValueError:
+        return print("\n Invalid, input a number \n")
         # Checking bounds of cards after 1 | Card 2
     if (select_card2 - 1) >= 0 and (select_card2 - 1) < len(hand):
         card2 = select_card2 - 1  
     else:
         return print("\n Your 2nd pick is not within your hand \n")
     
-    select_card3 = int(input("Select the 3rd card you want to burn: "))
+    try:
+        select_card3 = int(input("Select the 3rd card you want to burn: "))
+    except ValueError:
+        return print("\n Invalid, input a number \n")
     # 4th Checking bounds of cards after 1 | Card 3
     if (select_card3 - 1) >= 0 and (select_card3 - 1) < len(hand):
         card3 = select_card3 - 1  
@@ -149,8 +169,12 @@ def burn_3_cards(select_card1, card1, hand, card_on_table):
 def use_power(card_on_table, deck, hand, placeholder): # Add to the Picking a card method
     if deck[0][0] == 7:  # Check if the card in the hand at the specified index is a Joker
         print(placeholder)
-        select_card = int(input("You can view one of your cards, which one you want to see?  "))
-        card1 = select_card - 1
+        try:
+            select_card = int(input("You can view one of your cards, which one you want to see?  "))
+            card1 = select_card - 1
+        except ValueError:
+            print("\n Invalid, input a number \n")
+            return take_card(hand, card_on_table, deck, placeholder)
 
         if card1 >= 0 and card1 < len(hand):
             if hand[card1] == '':
@@ -180,8 +204,12 @@ def use_power(card_on_table, deck, hand, placeholder): # Add to the Picking a ca
     elif deck[0][0] == 'joker':
 
         print(placeholder)
-        select_card = int(input("You can burn any card with the joker, which card do you want to pick? "))
-        card1 = select_card - 1
+        try:
+            select_card = int(input("You can burn any card with the joker, which card do you want to pick? "))
+            card1 = select_card - 1
+        except ValueError:
+            print("\n Invalid, input a number \n")
+            return take_card(hand, card_on_table, deck, placeholder)
 
         if card1 >= 0 and card1 < len(hand):
             if hand[card1] == '':
@@ -201,8 +229,11 @@ def use_power(card_on_table, deck, hand, placeholder): # Add to the Picking a ca
 
 def pick_from_table(hand, card_on_table, placeholder):  # Completed
     print(placeholder)
-    select_card = int(input("What card do you want to swap?: "))
-    card1 = select_card - 1
+    try:
+        select_card = int(input("What card do you want to swap?: "))
+        card1 = select_card - 1
+    except ValueError:
+        return print("\n Invalid, input a number \n")
 
     if hand[card1] == '':
         print("\n Card picked is not within range, try again \n")
@@ -228,13 +259,22 @@ def take_card(hand, card_on_table, deck, placeholder):  # Completed
     if deck[0][0] == 7 or deck[0][0] == 8 or deck[0][0] == 9 or deck[0][0] == 'joker':
         print("3. Use power")
         hasPower = True
-
-    pick = int(input("Your option: "))
+    try:
+        pick = int(input("Your option: "))
+    except ValueError:
+        print("\n Invalid, input a number \n")
+        return take_card(hand, card_on_table, deck, placeholder)
     
     if(pick == 1):
             print(placeholder)
-            select_card = int(input("What card do you want to pick?: "))
-            card1 = select_card - 1
+            try:
+                select_card = int(input("What card do you want to pick?: "))
+                card1 = select_card - 1
+            except ValueError:
+                print("\n Invalid, input a number \n")
+                return take_card(hand, card_on_table, deck, placeholder)
+    
+
             if card1 >= 0 and card1 < len(hand):
                 if hand[card1] == '':
                     print("\n Card picked is not within range, try again \n")
