@@ -207,4 +207,6 @@ def call(hand):  # Current bug: Index goes of of bounds with Joker
     
     total_sum = sum(card[0] for card in hand)
     print("This is your final Sum:", total_sum)
+    hand.clear()
+
     return total_sum

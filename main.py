@@ -40,9 +40,8 @@ while(len(hand) != 0):
         pass
     
     elif choice == '4': 
-        game_functions.call(hand)
         print("Your final hand was:", hand)
-        hand.clear()
+        game_functions.call(hand)
         pass
     else: 
         print("That is not an option, please try again")
