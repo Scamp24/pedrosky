@@ -20,21 +20,22 @@ def Create_new_deck():
 def new_game(hand):
     print("\n You are allowed to see 2 cards once")
 
-    select_card1 = int(input("Select the card you want to see "))
+    select_card1 = int(input("Select the card you want to see, Card: ", ))
     card1 = select_card1 - 1 
 
     if (card1 >= 0 and card1 < len(hand)):
-        select_card2 = int(input("Select another card you want to see "))
+        select_card2 = int(input("Select another card you want to see, Card: "))
+        print("")
         card2 = select_card2 - 1 
         
         if (card2 >= 0 and card2 <len(hand)) and card1 != card2:
             print("Card ", select_card1, "is ", hand[card1])
-            print("Card ", select_card2, "is ", hand[card2])
+            print("Card ", select_card2, "is ", hand[card2],"\n" )
         else:
-            print("The card you want to see is not in your hand or is the same as the previous, try again")
+            print("\n The card you want to see is not in your hand or is the same as the previous, try again \n")
             new_game(hand)
     else:
-        print(" The card you want to see is not in your hand, try again")
+        print("\n The card you want to see is not in your hand, try again \n")
         new_game(hand)
     
 
@@ -58,13 +59,13 @@ def emptyDeck(deck, card_on_table): # Not tested
 
 def burn(hand, card_on_table, placeholder):
     if len(placeholder) < 2:
-        return print("Unable to burn, you must have at least 1 card remaining after burning")
+        return print("\n Unable to burn, you must have at least 1 card remaining after burning \n")
     
     select_card1 = int(input("Select the 1st card you want to burn: "))
     card1 = select_card1 - 1 
 
     if hand[card1] == '':
-        return print("Card picked is not within range, try again")
+        return print("\n Card picked is not within range, try again \n")
 
     if hand[card1][0] == 'joker':
         card_on_table.insert(0, hand[card1])
@@ -96,13 +97,13 @@ def burn(hand, card_on_table, placeholder):
 def burn_2_cards(select_card1, card1, hand, card_on_table):
     select_card2 = int(input("Select the 2nd card you want to burn: "))
     if select_card2 == select_card1:
-        return print("You picked the same card twice, try again")
+        return print("\n You picked the same card twice, try again \n")
             
     # 4th Checking bounds of cards after | Card 2 
     if (select_card2 - 1) >= 0 and (select_card2 - 1) < len(hand):
         card2 = select_card2 - 1  
     else:
-        return print("Your 2nd pick is not within your hand")
+        return print("\n Your 2nd pick is not within your hand \n")
 
     if hand[card1][0] == hand[card2][0]:
     # 3rd Check | Matching numbers 
@@ -111,7 +112,7 @@ def burn_2_cards(select_card1, card1, hand, card_on_table):
         hand[card1] = ''
         hand[card2] = ''
     else:
-        return print("One of the cards you selected does not match")
+        return print("\n One of the cards you selected does not match \n")
 
 
 def burn_3_cards(select_card1, card1, hand, card_on_table):
@@ -120,17 +121,17 @@ def burn_3_cards(select_card1, card1, hand, card_on_table):
     if (select_card2 - 1) >= 0 and (select_card2 - 1) < len(hand):
         card2 = select_card2 - 1  
     else:
-        return print("Your 2nd pick is not within your hand")
+        return print("\n Your 2nd pick is not within your hand \n")
     
     select_card3 = int(input("Select the 3rd card you want to burn: "))
     # 4th Checking bounds of cards after 1 | Card 3
     if (select_card3 - 1) >= 0 and (select_card3 - 1) < len(hand):
         card3 = select_card3 - 1  
     else:
-        return print("Your 3rd pick is not within your hand")
+        return print("\n Your 3rd pick is not within your hand \n")
             
     if select_card1 == select_card2 or select_card2 == select_card3 or select_card1 == select_card3:
-        return print("You picked the same card twice, try again")
+        return print("\n You picked the same card twice, try again \n")
             
     # Check | Matching numbers  
     if hand[card1][0] == hand[card2][0] and hand[card1][0] == hand[card3][0]:
@@ -141,7 +142,7 @@ def burn_3_cards(select_card1, card1, hand, card_on_table):
         hand[card2] = ''
         hand[card3] = ''
     else:
-        return print("One of the cards you selected does not match")
+        return print("\n One of the cards you selected does not match \n")
 
 
 
@@ -153,12 +154,12 @@ def use_power(card_on_table, deck, hand, placeholder): # Add to the Picking a ca
 
         if card1 >= 0 and card1 < len(hand):
             if hand[card1] == '':
-                print("Card picked is not within range, try again")
+                print("\n Card picked is not within range, try again \n")
                 take_card(hand, card_on_table, deck, placeholder)
             
             print("Card ", select_card , "is: ", hand[card1])
         else:
-            print("Card picked is not within range, try again")
+            print("\n Card picked is not within range, try again \n")
             take_card(hand, card_on_table, deck, placeholder)
 
         card_on_table.insert(0, deck[0])
@@ -168,12 +169,12 @@ def use_power(card_on_table, deck, hand, placeholder): # Add to the Picking a ca
     elif deck[0][0] == 8:  # Check if the card in the hand at the specified index is a Joker
         card_on_table.insert(0, deck[0])
         del deck[0]
-        print("You can see one of your opponent's card")
+        print("\n You can see one of your opponent's card \n")
         # Simulated, you could try the but you need to create a 2nd hand
     elif deck[0][0] == 9:  # Check if the card in the hand at the specified index is a Joker
         card_on_table.insert(0, deck[0])
         del deck[0]
-        print("You can trade one of your card to your opponent's card without looking")
+        print("\n You can trade one of your card to your opponent's card without looking \n")
         # Simulated, you could try the but you need to create a 2nd hand
         # An alternative is just swaping your own hand but again its not a big deal since its just swapping
     elif deck[0][0] == 'joker':
@@ -184,12 +185,12 @@ def use_power(card_on_table, deck, hand, placeholder): # Add to the Picking a ca
 
         if card1 >= 0 and card1 < len(hand):
             if hand[card1] == '':
-                print("Card picked is not within range, try again")
+                print("\n Card picked is not within range, try again \n")
                 take_card(hand, card_on_table, deck, placeholder)
             
             print("Card ", select_card , "is: ", hand[card1])
         else:
-            print("Card picked is not within range, try again")
+            print("\n Card picked is not within range, try again \n")
             take_card(hand, card_on_table, deck, placeholder)
 
         card_on_table.insert(0, deck[0])
@@ -204,7 +205,7 @@ def pick_from_table(hand, card_on_table, placeholder):  # Completed
     card1 = select_card - 1
 
     if hand[card1] == '':
-        print("Card picked is not within range, try again")
+        print("\n Card picked is not within range, try again \n")
         pick_from_table(hand, card_on_table)
 
     if (card1 >= 0 and card1 < len(hand)):
@@ -213,7 +214,7 @@ def pick_from_table(hand, card_on_table, placeholder):  # Completed
         card_on_table[0] = temp
         return hand, card_on_table
     else:
-        print("Card picked is not within range, try again")
+        print("\n Card picked is not within range, try again \n")
         pick_from_table(hand, card_on_table)
          
 
@@ -236,7 +237,7 @@ def take_card(hand, card_on_table, deck, placeholder):  # Completed
             card1 = select_card - 1
             if card1 >= 0 and card1 < len(hand):
                 if hand[card1] == '':
-                    print("Card picked is not within range, try again")
+                    print("\n Card picked is not within range, try again \n")
                     take_card(hand, card_on_table, deck, placeholder)
 
                 temp = hand[card1]
@@ -244,7 +245,7 @@ def take_card(hand, card_on_table, deck, placeholder):  # Completed
                 card_on_table.insert(0, temp)
                 del deck[0]
             else:
-                print("Card picked is not within range, try again")
+                print("\n Card picked is not within range, try again \n")
                 take_card(hand, card_on_table, deck, placeholder)
 
     elif(pick == 2):
@@ -256,11 +257,11 @@ def take_card(hand, card_on_table, deck, placeholder):  # Completed
         if hasPower:
             use_power(card_on_table, deck, hand, placeholder)
         else:
-            print("Not a valid a option")
+            print("\n Not a valid a option \n")
             take_card(hand, card_on_table, deck, placeholder)
 
     else:
-        print("Not a valid a option")
+        print("\n Not a valid a option\n")
         take_card(hand, card_on_table, deck, placeholder)
 
 

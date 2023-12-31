@@ -28,7 +28,8 @@ while(len(hand) != 0):
     print("3. Burn") # [Completed] | 100% 
     print("4. Call game") # [Completed]| 100%
 
-    choice = input("What do you want to do: ")
+    choice = input("\nWhat do you want to do: ")
+    print()
     if choice == '1':
         game_functions.take_card(hand, card_on_table, deck, placeholder)
         pass
