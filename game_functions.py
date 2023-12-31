@@ -244,18 +244,20 @@ def take_card(hand, card_on_table, deck, placeholder):  # Completed
 
 
 def call(hand):  # Current bug: Index goes of of bounds with Joker 
-    for i, card in enumerate(hand):
-        # Check if the card is a joker and replace it with 20
-        if card[0] == 'joker':
-            hand[i] = (20, card[1])
-        # Check if the card is the 12 of Swords and replace it with 0
-        elif card[0] == 12 and card[1] == 'Swords':
-            hand[i] = (0, card[1])
-
-    # Perform the sum operation after converting jokers to 20 and 12 of Swords to 0
-    
-    total_sum = sum(card[0] for card in hand)
-    print("This is your final Sum:", total_sum)
+    total = 0
+    for card in hand:
+        if isinstance(card, tuple) and len(card) == 2:
+            value, suit = card
+            if value == 'joker':
+                total += 20
+            elif value == 12 and suit == 'Swords':
+                total += 0
+            elif value == '':
+                total += 0
+            else:
+                total += value
+    print("This is your final Sum:", total)
     hand.clear()
+    return total
+    
 
-    return total_sum
