@@ -6,3 +6,6 @@ Current updates to the logic. Adding a placeholder array to keep up with the "Pl
 
 Added placeholder array for cards and futher bug mitigation
 
+0.0.2 | Dec 30th, 2023 
+
+Burn was merged and its only one function now
