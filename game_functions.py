@@ -35,10 +35,10 @@ def emptyDeck(deck, card_on_table): # Not tested
     del deck[0]
     return deck, card_on_table
 
-def burn_to_table(hand, card_on_table, placeholder):
+def burn(hand, card_on_table, placeholder):
     if len(placeholder) < 2:
         return print("Unable to burn, you must have at least 1 card remaining after burning")
-
+    
     select_card1 = int(input("Select the 1st card you want to burn: "))
     card1 = select_card1 - 1 
 
@@ -48,11 +48,17 @@ def burn_to_table(hand, card_on_table, placeholder):
     if hand[card1][0] == 'joker':
         card_on_table.insert(0, hand[card1])
         hand[card1] = ''
+    
+    elif (card1 >= 0 and card1 < len(hand)):
+        choice = input("How many cards are your burning? ")
+        if choice == '1':
+            if hand[card1][0] == card_on_table[0][0]:
+                card_on_table.insert(0, hand[card1])
+                hand[card1] = ''
+            else:
+                return print("The selected card does not match the card on table")
 
-    elif hand[card1] == card_on_table[0]:
-        choice = int(input("How many cards are your burning? 2 or 3?"))
-
-        if choice == '2':
+        elif choice == '2':
             if len(placeholder) < 3:
                 print("Not enough card to burn 2 cards")
             else:
@@ -65,10 +71,6 @@ def burn_to_table(hand, card_on_table, placeholder):
                 burn_3_cards(select_card1,card1, hand, card_on_table)
         else: 
             print("That is not within your card range")
-    else:
-        print("The selected does not match the card on table")
-
-        
 
 def burn_2_cards(select_card1, card1, hand, card_on_table):
     select_card2 = int(input("Select the 2nd card you want to burn: "))
@@ -121,45 +123,8 @@ def burn_3_cards(select_card1, card1, hand, card_on_table):
         return print("One of the cards you selected does not match")
 
 
-def burn_from_hand(hand, card_on_table, placeholder): # Completed 
-    # 1st check | Unable to burn if you have less than 3 cards
-    if len(placeholder) < 3:
-        return print("Unable to burn, you must have at least 1 card remaining after burning")
-    
-    print(hand)
-    select_card1 = int(input("Select the 1st card you want to burn: "))
-    card1 = select_card1 - 1 
 
-    if hand[card1] == '':
-        return print("Card picked is not within range, try again")
-
-    # 2nd Check | A joker can be burnt by itself if selected
-    if hand[card1][0] == 'joker':
-        card_on_table.insert(0, hand[card1])
-        hand[card1] = ''
-
-    # How many cards to burn? 2 or 3?
-    elif (card1 >= 0 and card1 < len(hand)):
-        choice = int(input("How many cards are your burning? 2 or 3?"))
-       
-        if choice == '2':
-            if len(placeholder) < 3:
-                print("Not enough card to burn 2 cards")
-            else:
-                burn_2_cards(select_card1,card1, hand, card_on_table)
-
-        elif choice == '3':
-            if len(placeholder) < 4:
-                print("Not enough cards to burn 3")
-            else:
-                burn_3_cards(select_card1,card1, hand, card_on_table)
-        else: 
-            print("That is not within your card range")         
-    else: 
-        return print("The card you selected is not in your hand, Try again")
-
-
-def use_power(card1, hand, card_on_table):
+def use_power(card1, hand, card_on_table): # Add to the Picking a card method
     if card1 < len(hand):
         if hand[card1][0] == 7:  # Check if the card in the hand at the specified index is a Joker
                 card_on_table.insert(0, hand[card1])
