@@ -15,16 +15,14 @@ while(len(hand) != 0):
     # [Add] Stats (Actions, Cards burned, powers used) In the future, Use counters for this)
     # [Add] if main deck is empty then deal another game then reshuffle the main deck with the cards on table
 
-    # [Fix] Every single input must be able to handle non-int answers for failures
-
     print("This is your hand:", placeholder)
     print("This is your hand:", hand)
-    print("This is the card on table", card_on_table)
+    print("This is the card on table", card_on_table[0])
 
     print("1. Pick From the Main deck") # [In Progress] | 75%  
     print("2. Swap with card on the table") # [Completed] | 100%
     print("3. Burn") # [Completed] | 100% 
-    print("4. Call game") # [In Progress] | Broken, yet to look for the bug
+    print("4. Call game") # [Completed]| 100%
 
     choice = input("What do you want to do: ")
     if choice == '1':

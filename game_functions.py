@@ -124,23 +124,29 @@ def burn_3_cards(select_card1, card1, hand, card_on_table):
 
 
 
-def use_power(card1, hand, card_on_table): # Add to the Picking a card method
-    if card1 < len(hand):
-        if hand[card1][0] == 7:  # Check if the card in the hand at the specified index is a Joker
-                card_on_table.insert(0, hand[card1])
-                del hand[card1]
-                print("You can see one of your cards")
-        elif hand[card1][0] == 8:  # Check if the card in the hand at the specified index is a Joker
-                card_on_table.insert(0, hand[card1])
-                del hand[card1]
-                print("You can see one of your opponent's card")
-        elif hand[card1][0] == 9:  # Check if the card in the hand at the specified index is a Joker
-                card_on_table.insert(0, hand[card1])
-                del hand[card1]
-                print("You can trade one of your card to your opponent's card without looking")
-        else:
-            print("This card does not have any power")     
-
+def use_power(card_on_table, deck, hand): # Add to the Picking a card method
+    if deck[0][0] == 7:  # Check if the card in the hand at the specified index is a Joker
+        card_on_table.insert(0, deck[0])
+        del deck[0]
+        print("You can see one of your cards")
+        # Add to which card can we see from hand (must print placeholder, and use logic from hand)
+    elif deck[0][0] == 8:  # Check if the card in the hand at the specified index is a Joker
+        card_on_table.insert(0, deck[0])
+        del deck[0]
+        print("You can see one of your opponent's card")
+        # Simulated, you could try the but you need to create a 2nd hand
+    elif [0][0] == 9:  # Check if the card in the hand at the specified index is a Joker
+        card_on_table.insert(0, deck[0])
+        del deck[0]
+        print("You can trade one of your card to your opponent's card without looking")
+        # Simulated, you could try the but you need to create a 2nd hand
+        # An alternative is just swaping your own hand but again its not a big deal since its just swapping
+    elif [0][0] == 'joker':
+        # Create function to pick from your hand the card you want to burn, make sure joker is deleted first
+        deck[0]
+        # Delete card from hand that user picked 
+        print("Pick a card you want to burn with joker")
+        
 
 def pick_from_table(hand, card_on_table):  # Completed
     print(hand)
@@ -166,6 +172,12 @@ def take_card(hand, card_on_table, deck, placeholder):  # Completed
     
     print("1. Swap a card in your hand")
     print("2. Drop")
+
+    hasPower = False
+    if deck[0][0] == 7 or deck[0][0] == 8 or deck[0][0] == 9 or deck[0][0] == 'joker':
+        print("3. Use power")
+        hasPower = True
+
     pick = int(input("Your option: "))
     
     if(pick == 1):
@@ -189,6 +201,14 @@ def take_card(hand, card_on_table, deck, placeholder):  # Completed
         print("You drop the card")
         card_on_table.insert(0, deck[0])
         del deck[0]
+    
+    elif(pick ==3):
+        if hasPower:
+            use_power(card_on_table, deck, hand)
+        else:
+            print("Not a valid a option")
+        take_card(hand, card_on_table, deck)
+
     else:
         print("Not a valid a option")
         take_card(hand, card_on_table, deck)
