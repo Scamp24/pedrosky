@@ -18,13 +18,13 @@ def Create_new_deck():
 
 
 def new_game(hand):
-    print("You are allowed to see 2 cards once")
+    print("\n You are allowed to see 2 cards once")
 
     select_card1 = int(input("Select the card you want to see "))
     card1 = select_card1 - 1 
 
     if (card1 >= 0 and card1 < len(hand)):
-        select_card2 = int(input("Select the card you want to see "))
+        select_card2 = int(input("Select another card you want to see "))
         card2 = select_card2 - 1 
         
         if (card2 >= 0 and card2 <len(hand)) and card1 != card2:
@@ -198,8 +198,8 @@ def use_power(card_on_table, deck, hand, placeholder): # Add to the Picking a ca
         hand[card1] = ''
         
 
-def pick_from_table(hand, card_on_table):  # Completed
-    print(hand)
+def pick_from_table(hand, card_on_table, placeholder):  # Completed
+    print(placeholder)
     select_card = int(input("What card do you want to swap?: "))
     card1 = select_card - 1
 
@@ -231,7 +231,7 @@ def take_card(hand, card_on_table, deck, placeholder):  # Completed
     pick = int(input("Your option: "))
     
     if(pick == 1):
-            print(hand)
+            print(placeholder)
             select_card = int(input("What card do you want to pick?: "))
             card1 = select_card - 1
             if card1 >= 0 and card1 < len(hand):

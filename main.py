@@ -11,13 +11,13 @@ new_game = True
 while(len(hand) != 0):
     placeholder = game_functions.placeholder_array(hand)
 
-
+    # [Enhance] Visual look of the statements
     # [Fix] Some input are int and might lead to error when strings are registered
     # [Add] if main deck is empty then deal another game then reshuffle the main deck with the cards on table
 
     print("This is your hand:", placeholder)
-    print("This is your hand:", hand)
-    print("This is the card on table", card_on_table[0])
+    # print("This is your hand:", hand) # This is used to check the hand
+    print("\n This is the card on table", card_on_table[0])
 
     if (new_game):
         game_functions.new_game(hand)
@@ -34,7 +34,7 @@ while(len(hand) != 0):
         pass
 
     elif choice == '2':
-        game_functions.pick_from_table(hand, card_on_table)
+        game_functions.pick_from_table(hand, card_on_table, placeholder)
         pass
     
     elif choice == '3':
