@@ -17,6 +17,27 @@ def Create_new_deck():
     return deck
 
 
+def new_game(hand):
+    print("You are allowed to see 2 cards once")
+
+    select_card1 = int(input("Select the card you want to see "))
+    card1 = select_card1 - 1 
+
+    if (card1 >= 0 and card1 < len(hand)):
+        select_card2 = int(input("Select the card you want to see "))
+        card2 = select_card2 - 1 
+        
+        if (card2 >= 0 and card2 <len(hand)) and card1 != card2:
+            print("Card ", select_card1, "is ", hand[card1])
+            print("Card ", select_card2, "is ", hand[card2])
+        else:
+            print("The card you want to see is not in your hand or is the same as the previous, try again")
+            new_game(hand)
+    else:
+        print(" The card you want to see is not in your hand, try again")
+        new_game(hand)
+    
+
 def shuffle(deck):
     random.shuffle(deck)
     return deck
