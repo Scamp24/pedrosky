@@ -8,11 +8,12 @@ This repository aims to create a single player version of the game to recreate f
 - 2-4 players 👤
 - 1 Deck of Spanish playing cards 
   
-# Game Setup ( 2x Pending GIFs) ✅
-- Shuffle and deal cards to players until each has 4 cards. (Pending GIF) ✅
+# Game Setup
+- Shuffle and deal cards to players until each has 4 cards. (Pending GIF)
 ![IMG_4104](https://github.com/Scamp24/pedrosky/assets/61484587/b75b7094-d113-41ee-b49b-14348774f389)
 
 - Place remaining cards as the main deck and reveal the top card as the "current card on table." (Pending GIF) ✅
+![IMG_4108](https://github.com/Scamp24/pedrosky/assets/61484587/646adb54-7f91-4540-b22d-b9947275c022)
 - The direction of the game is always to the right (From left to right from where game started) 
 
 # Game Area 
