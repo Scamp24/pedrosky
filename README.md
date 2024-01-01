@@ -9,7 +9,7 @@ This repository aims to create a single player version of the game to recreate f
 - 1 Deck of Spanish playing cards 
   
 # Game Setup
-- Shuffle and deal cards to players until each has 4 cards. (Pending GIF)
+- Shuffle and deal cards to players until each has 4 cards. 
 ![IMG_4104](https://github.com/Scamp24/pedrosky/assets/61484587/b75b7094-d113-41ee-b49b-14348774f389)
 
 - Place remaining cards as the main deck and reveal the top card as the "current card on table." 
@@ -26,6 +26,7 @@ The main game area has 3 zones:
 # Gameplay ( 1 x Pending GIFS) 
 - Each player holds 4 cards as their "hand" but can only view 2 initially.
 - Players select 2 cards from their hand to view once.
+  
 ![IMG_4110](https://github.com/Scamp24/pedrosky/assets/61484587/1dcf26ec-9d14-4722-8087-54d2d50566b5)
 - Players can't change cards position when playing
 - The player who received their hand first starts the game.
