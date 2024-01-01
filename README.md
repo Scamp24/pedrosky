@@ -8,46 +8,47 @@ This repository aims to create a single player version of the game to recreate f
 - 2-4 players 👤
 - 1 Deck of Spanish playing cards 
   
-# Game Setup ( 2x Pending GIFs)
-- Shuffle and deal cards to players until each has 4 cards. (Pending GIF)
-- Place remaining cards as the deck and reveal the top card as the "current card on table." (Pending GIF)
+# Game Setup ( 2x Pending GIFs) ✅
+- Shuffle and deal cards to players until each has 4 cards. (Pending GIF) ✅
+- Place remaining cards as the main deck and reveal the top card as the "current card on table." (Pending GIF) ✅
 - The direction of the game is always to the right (From left to right from where game started) 
 
-# Game Area ( 1 Big image) 
+# Game Area ( 1 Big image) ✅
 Explain the 3 zones (Hand, Main deck and Card on table)
 
-# Gameplay ( 4 x Pending GIFS) 
-- Each player holds 4 cards as their "hand" but can only view 2 initially. (Pending GIF)
+# Gameplay ( 1 x Pending GIFS) 
+- Each player holds 4 cards as their "hand" but can only view 2 initially.
 - Players select 2 cards from their hand to view once (unchangeable until their turn). (Pending GIF)
+- Players can't change cards position when playing
 - The player who received their hand first starts the game.
-- On a turn, players draw from the main deck to swap or discard cards on their hand. (Pending GIF)
+- On a turn, players draw from the main deck to swap or discard cards on their hand. 
 - Player burn or swap cards until the game is called. Must remain at least with 1 card 
-- When the game is called, every player gets the sum of their hand and a winner is determined. (Pending GIF)
+- When the game is called, every player gets the sum of their hand and a winner is determined. 
 
 # Actions ( Pending GIFS) 
 List of possible actions within a turn, only 1 action per turn is allowed
 
-## Burn
+## Burn (3 x)
 Burning means disposing 1 or more cards in your hand that have a matching numbers. There a multiple ways to burn but the only requirement before burning anything is to at least have 1 card in your hand after burning, if this is not consider then its not possible. Whenever cards are burned they are dispose into the card on table.
 - Burning from your hand: If in the player's hand there is 2 or 3 matching numbers then cards could be burned
 - Burning from your hand to the card on table: If there's 1 or more cards in player's hand that matches the number of the card on table, it is allowed to burn
 - Burning from picking from the main deck: When a player draw from the main deck and the card's number matches 1 or more in the player's hand, it is allowed to burn
 
-## Draw Card
+## Draw Card ( 2x)
 In the player's turn, there's is the possibility of either burning or getting a card from the main deck to futher progress with their game, after picking a card there is 2 options
 - **Burn**: If there's the possibility to burn a card
 - **Swap**: The player could swap the card for one of the card in the hand and dispose it to the card on table
 - **Dispose**: The player does not want the current card that it draw, the card is throw to the card on table
 
-## Swap
+## Swap ( 1x )
 The player could swap a card from their hand to the card on table
 
 **Note**: A player can't just add the card to the hand, it must do one of the actions above 
 
-## Call Game
+## Call Game ( 1x )
 The player feels certain that it has the lowest sum in the table, player must hit the table twice and all players from the table must reveal their hands. Game ends
 
-# Powers
+# Powers (x4 )
 ## During the game
  7, 8, 9, and Joker have powers whenever a player draw a card from the main deck.
 - 7: Reveals a card from the player's hand.
@@ -61,7 +62,7 @@ If the player desires to use a power, then it must announce to the table that it
 - 12 of Swords: This card whenever is kept in the player's hand at the end of the game, this card value is 0. In other words the best card
 - Joker: This card whenever is kept in player's hand at the end of the game, this card value is 20. The worst card when game is called
 
-# Penalties
+# Penalties (1x )
 - When a player intends to burn a card and the action is no possible, player must add to their hand the card on table
 
 # Standard Game Setting: Points System
@@ -81,7 +82,7 @@ The player that called the game MUST be the lowest sum in case its not the playe
 - Win mode: Only counting wins
 -  Custom: Own rules 
 
-# Edge Cases 
+# Edge Cases ( 3x except ties) 
 - No card on table: There is a rare chance that the card on table is missing after the first few rounds, in this case no card has to be added from the main deck to the table but rather the game continues. Eventually there will be a guarantee throughout the game that a card will be on the table.
 - No cards in the main deck: In a long game, after the main deck is depleted, the cards coming the stack on the table must be shuffle and placed in the main deck and a card must be draw to have a card on table. Game resumes after this
 - Swap 2 cards for 1: Whenever a player's hand is down to the last 2 cards, by rule a player must hold at least 1 card during the whole game. However if the remaning 2 cards are able to be burn there is the possibility of burning those 2 cards and replacing the empty hand with the card that was on the table before burning, this would guarantee that the player's hand is holding at least 1 card. This action is not limited to the last 2 cards
