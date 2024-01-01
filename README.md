@@ -1,4 +1,4 @@
-![IMG_4121](https://github.com/Scamp24/pedrosky/assets/61484587/718a4504-177e-44d7-adc1-465d1d6a3058)# PEDROSKY - Card Game
+# PEDROSKY - Card Game
 
 Card game played with a deck of 50 Spanish playing cards, comprising numbers 1-12 with symbols: Swords, Coins, Clubs, and Cups, along with two joker cards. The objective is to call the game when having the lowest sum within your hand.
 
@@ -87,8 +87,14 @@ The player feels certain that it has the lowest sum in the table, player must hi
 
 - 9: Allows a blind swap between player hands.
 
+  ![IMG_4123](https://github.com/Scamp24/pedrosky/assets/61484587/71692a5f-5069-471f-9efa-cd92cd06023b)
+
   
 - Joker: Acts as any number but not symbol. Can burn any single card in a hand. Whenever its in your hand, it can burn but itself
+
+![IMG_4124](https://github.com/Scamp24/pedrosky/assets/61484587/f75e9255-7a89-41d5-ac3a-9365426f7534)
+
+  
 
 If the player desires to use a power, then it must announce to the table that it will use the power and dispose it to the card on table. Power usage is completely optional and cards are treated as numbers regardless wether a power was used or not. 
 
@@ -96,7 +102,7 @@ If the player desires to use a power, then it must announce to the table that it
 - 12 of Swords: This card whenever is kept in the player's hand at the end of the game, this card value is 0. In other words the best card
 - Joker: This card whenever is kept in player's hand at the end of the game, this card value is 20. The worst card when game is called
 
-# Penalties (1x )
+# Penalties 
 - When a player intends to burn a card and the action is no possible, player must add to their hand the card on table
 
 # Standard Game Setting: Points System
@@ -116,14 +122,14 @@ The player that called the game MUST be the lowest sum in case its not the playe
 - Win mode: Only counting wins
 -  Custom: Own rules 
 
-# Edge Cases ( 3x except ties) 
+# Edge Cases 
 - No card on table: There is a rare chance that the card on table is missing after the first few rounds, in this case no card has to be added from the main deck to the table but rather the game continues. Eventually there will be a guarantee throughout the game that a card will be on the table.
 - No cards in the main deck: In a long game, after the main deck is depleted, the cards coming the stack on the table must be shuffle and placed in the main deck and a card must be draw to have a card on table. Game resumes after this
 - Swap 2 cards for 1: Whenever a player's hand is down to the last 2 cards, by rule a player must hold at least 1 card during the whole game. However if the remaning 2 cards are able to be burn there is the possibility of burning those 2 cards and replacing the empty hand with the card that was on the table before burning, this would guarantee that the player's hand is holding at least 1 card. This action is not limited to the last 2 cards
 - Ties: In a game setting when players are not using points, the winner are all the players that tied with the player that made the call. In a game setting with point, refer to the point system.
 
 # Real life version vs Repository
-Since this is a single player version and there's no functionality to add more players or CPU opponents, therefore they are certain functionalities missing 
+Since this is a single player version and there's no functionality to add more players or CPU opponents, therefore they are certain functionalities missing such as the edge cases which are yet to be implemented
 
 # Developer's Notes 
 
