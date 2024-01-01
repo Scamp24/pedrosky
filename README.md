@@ -12,12 +12,11 @@ This repository aims to create a single player version of the game to recreate f
 - Shuffle and deal cards to players until each has 4 cards. (Pending GIF)
 ![IMG_4104](https://github.com/Scamp24/pedrosky/assets/61484587/b75b7094-d113-41ee-b49b-14348774f389)
 
-- Place remaining cards as the main deck and reveal the top card as the "current card on table." (Pending GIF) ✅
+- Place remaining cards as the main deck and reveal the top card as the "current card on table." 
 ![IMG_4108](https://github.com/Scamp24/pedrosky/assets/61484587/646adb54-7f91-4540-b22d-b9947275c022)
 - The direction of the game is always to the right (From left to right from where game started) 
 
 # Game Area 
-Explain the 3 zones (Hand, Main deck and Card on table)
 The main game area has 3 zones:
 - 🟡 Hand: This is the player's cards
 - 🟢 Main deck: The remaining cards after the game started
@@ -29,7 +28,7 @@ The main game area has 3 zones:
 
 # Gameplay ( 1 x Pending GIFS) 
 - Each player holds 4 cards as their "hand" but can only view 2 initially.
-- Players select 2 cards from their hand to view once (unchangeable until their turn). (Pending GIF)
+- Players select 2 cards from their hand to view once. (Pending GIF)
 - Players can't change cards position when playing
 - The player who received their hand first starts the game.
 - On a turn, players draw from the main deck to swap or discard cards on their hand. 
