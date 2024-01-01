@@ -40,7 +40,9 @@ List of possible actions within a turn, only 1 action per turn is allowed
 ## Burn 
 Burning means disposing 1 or more cards in your hand that have a matching numbers. There a multiple ways to burn but the only requirement before burning anything is to at least have 1 card in your hand after burning, if this is not consider then its not possible. Whenever cards are burned they are dispose into the card on table.
 - Burning from your hand: If in the player's hand there is 2 or 3 matching numbers then cards could be burned
+  
   ![IMG_4111](https://github.com/Scamp24/pedrosky/assets/61484587/3c813055-50c6-486c-8d04-f4f007f908b4)
+  
 - Burning from your hand to the card on table: If there's 1 or more cards in player's hand that matches the number of the card on table, it is allowed to burn
   
   ![IMG_4112](https://github.com/Scamp24/pedrosky/assets/61484587/179c953a-0806-410e-8574-d75cda0a6caf)
@@ -59,6 +61,7 @@ In the player's turn, there's is the possibility of either burning or getting a 
 
   
 - **Dispose**: The player does not want the current card that it draw, the card is throw to the card on table
+  
   ![IMG_4116](https://github.com/Scamp24/pedrosky/assets/61484587/ef310b3e-b6ec-4f33-9ea0-46da3ce75af7)
 
 
