@@ -10,11 +10,15 @@ This repository aims to create a single player version of the game to recreate f
   
 # Game Setup ( 2x Pending GIFs) ✅
 - Shuffle and deal cards to players until each has 4 cards. (Pending GIF) ✅
+
 - Place remaining cards as the main deck and reveal the top card as the "current card on table." (Pending GIF) ✅
 - The direction of the game is always to the right (From left to right from where game started) 
 
 # Game Area ( 1 Big image) ✅
 Explain the 3 zones (Hand, Main deck and Card on table)
+![tempImage1LtVQs](https://github.com/Scamp24/pedrosky/assets/61484587/c8e7a190-063b-4c76-9342-0958804e9106)
+
+
 
 # Gameplay ( 1 x Pending GIFS) 
 - Each player holds 4 cards as their "hand" but can only view 2 initially.
