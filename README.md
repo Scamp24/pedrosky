@@ -14,8 +14,12 @@ This repository aims to create a single player version of the game to recreate f
 - Place remaining cards as the main deck and reveal the top card as the "current card on table." (Pending GIF) ✅
 - The direction of the game is always to the right (From left to right from where game started) 
 
-# Game Area ( 1 Big image) ✅
+# Game Area 
 Explain the 3 zones (Hand, Main deck and Card on table)
+The main game area has 3 zones:
+- 🟡 Hand: This is the player's cards
+- 🟢 Main deck: The remaining cards after the game started
+- 🔴 Card on table: The card that could be use to swap or burn available to all the players. 
 <img src="https://github.com/Scamp24/pedrosky/assets/61484587/5798470b-502a-4a5e-9c37-1e14ed314e60" width="700" height="500">
 
 
