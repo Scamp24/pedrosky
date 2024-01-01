@@ -26,7 +26,6 @@ The main game area has 3 zones:
 # Gameplay ( 1 x Pending GIFS) 
 - Each player holds 4 cards as their "hand" but can only view 2 initially.
 - Players select 2 cards from their hand to view once.
-- 
 ![IMG_4110](https://github.com/Scamp24/pedrosky/assets/61484587/1dcf26ec-9d14-4722-8087-54d2d50566b5)
 - Players can't change cards position when playing
 - The player who received their hand first starts the game.
