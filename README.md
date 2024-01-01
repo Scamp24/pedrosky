@@ -20,7 +20,7 @@ The main game area has 3 zones:
 - 🟡 Hand: This is the player's cards
 - 🟢 Main deck: The remaining cards after the game started
 - 🔴 Card on table: The card that could be use to swap or burn available to all the players. 
-<img src="https://github.com/Scamp24/pedrosky/assets/61484587/5798470b-502a-4a5e-9c37-1e14ed314e60" width="700" height="500">
+<img src="https://github.com/Scamp24/pedrosky/assets/61484587/5798470b-502a-4a5e-9c37-1e14ed314e60" width="600" height="400">
 
 
 
