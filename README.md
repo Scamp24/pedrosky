@@ -23,7 +23,7 @@ The main game area has 3 zones:
 - 🔴 Card on table: The card that could be use to swap or burn available to all the players. 
 <img src="https://github.com/Scamp24/pedrosky/assets/61484587/5798470b-502a-4a5e-9c37-1e14ed314e60" width="600" height="400">
 
-# Gameplay ( 1 x Pending GIFS) 
+# Gameplay 
 - Each player holds 4 cards as their "hand" but can only view 2 initially.
 - Players select 2 cards from their hand to view once.
   
@@ -34,12 +34,13 @@ The main game area has 3 zones:
 - Player burn or swap cards until the game is called. Must remain at least with 1 card 
 - When the game is called, every player gets the sum of their hand and a winner is determined. 
 
-# Actions ( Pending GIFS) 
+# Actions
 List of possible actions within a turn, only 1 action per turn is allowed
 
 ## Burn (3 x)
 Burning means disposing 1 or more cards in your hand that have a matching numbers. There a multiple ways to burn but the only requirement before burning anything is to at least have 1 card in your hand after burning, if this is not consider then its not possible. Whenever cards are burned they are dispose into the card on table.
 - Burning from your hand: If in the player's hand there is 2 or 3 matching numbers then cards could be burned
+  ![IMG_4111](https://github.com/Scamp24/pedrosky/assets/61484587/3c813055-50c6-486c-8d04-f4f007f908b4)
 - Burning from your hand to the card on table: If there's 1 or more cards in player's hand that matches the number of the card on table, it is allowed to burn
 - Burning from picking from the main deck: When a player draw from the main deck and the card's number matches 1 or more in the player's hand, it is allowed to burn
 
