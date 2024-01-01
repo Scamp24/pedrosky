@@ -42,6 +42,7 @@ Burning means disposing 1 or more cards in your hand that have a matching number
 - Burning from your hand: If in the player's hand there is 2 or 3 matching numbers then cards could be burned
   ![IMG_4111](https://github.com/Scamp24/pedrosky/assets/61484587/3c813055-50c6-486c-8d04-f4f007f908b4)
 - Burning from your hand to the card on table: If there's 1 or more cards in player's hand that matches the number of the card on table, it is allowed to burn
+  
   ![IMG_4112](https://github.com/Scamp24/pedrosky/assets/61484587/179c953a-0806-410e-8574-d75cda0a6caf)
 - Burning from picking from the main deck: When a player draw from the main deck and the card's number matches 1 or more in the player's hand, it is allowed to burn
   
