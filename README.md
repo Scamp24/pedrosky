@@ -42,13 +42,17 @@ Burning means disposing 1 or more cards in your hand that have a matching number
 - Burning from your hand: If in the player's hand there is 2 or 3 matching numbers then cards could be burned
   ![IMG_4111](https://github.com/Scamp24/pedrosky/assets/61484587/3c813055-50c6-486c-8d04-f4f007f908b4)
 - Burning from your hand to the card on table: If there's 1 or more cards in player's hand that matches the number of the card on table, it is allowed to burn
+  ![IMG_4112](https://github.com/Scamp24/pedrosky/assets/61484587/179c953a-0806-410e-8574-d75cda0a6caf)
 - Burning from picking from the main deck: When a player draw from the main deck and the card's number matches 1 or more in the player's hand, it is allowed to burn
+  
 
 ## Draw Card ( 2x)
 In the player's turn, there's is the possibility of either burning or getting a card from the main deck to futher progress with their game, after picking a card there is 2 options
 - **Burn**: If there's the possibility to burn a card
 - **Swap**: The player could swap the card for one of the card in the hand and dispose it to the card on table
 - **Dispose**: The player does not want the current card that it draw, the card is throw to the card on table
+  ![IMG_4116](https://github.com/Scamp24/pedrosky/assets/61484587/ef310b3e-b6ec-4f33-9ea0-46da3ce75af7)
+
 
 ## Swap ( 1x )
 The player could swap a card from their hand to the card on table
