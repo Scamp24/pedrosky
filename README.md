@@ -95,7 +95,7 @@ The player feels certain that it has the lowest sum in the table, player must hi
   
 - Joker: Acts as any number but not symbol. Can burn any single card in a hand. Whenever its in your hand, it can burn but itself
 
-![IMG_4124](https://github.com/Scamp24/pedrosky/assets/61484587/f75e9255-7a89-41d5-ac3a-9365426f7534)
+  ![IMG_4124](https://github.com/Scamp24/pedrosky/assets/61484587/f75e9255-7a89-41d5-ac3a-9365426f7534)
 
   
 
