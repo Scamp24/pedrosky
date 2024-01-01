@@ -69,10 +69,12 @@ The player could swap a card from their hand to the card on table
 
 **Note**: A player can't just add the card to the hand, it must do one of the actions above 
 
-## Call Game ( 1x )
+## Call Game 
 The player feels certain that it has the lowest sum in the table, player must hit the table twice and all players from the table must reveal their hands. Game ends
 
-# Powers (x4 )
+![IMG_4120](https://github.com/Scamp24/pedrosky/assets/61484587/0c3cfc9a-eb17-4362-9f71-77e194abbbd4)
+
+# Powers 
 ## During the game
  7, 8, 9, and Joker have powers whenever a player draw a card from the main deck.
 - 7: Reveals a card from the player's hand.
