@@ -50,6 +50,7 @@ Burning means disposing 1 or more cards in your hand that have a matching number
 ## Draw Card ( 2x)
 In the player's turn, there's is the possibility of either burning or getting a card from the main deck to futher progress with their game, after picking a card there is 2 options
 - **Burn**: If there's the possibility to burn a card
+  
   ![IMG_4117](https://github.com/Scamp24/pedrosky/assets/61484587/79f288d1-6b25-4452-9110-d7ab55306afc)
 
 - **Swap**: The player could swap the card for one of the card in the hand and dispose it to the card on table
