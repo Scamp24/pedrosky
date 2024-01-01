@@ -16,7 +16,7 @@ This repository aims to create a single player version of the game to recreate f
 
 # Game Area ( 1 Big image) ✅
 Explain the 3 zones (Hand, Main deck and Card on table)
-<img src="https://github.com/Scamp24/pedrosky/assets/61484587/5798470b-502a-4a5e-9c37-1e14ed314e60" width="500" height="500">
+<img src="https://github.com/Scamp24/pedrosky/assets/61484587/5798470b-502a-4a5e-9c37-1e14ed314e60" width="1000" height="800">
 
 
 
