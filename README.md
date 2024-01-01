@@ -78,6 +78,9 @@ The player feels certain that it has the lowest sum in the table, player must hi
 ## During the game
  7, 8, 9, and Joker have powers whenever a player draw a card from the main deck.
 - 7: Reveals a card from the player's hand.
+
+  ![IMG_4121](https://github.com/Scamp24/pedrosky/assets/61484587/7fabd73d-562a-489e-879e-1f5d77109763)
+
 - 8: Reveals a card from another player's hand.
 - 9: Allows a blind swap between player hands.
 - Joker: Acts as any number but not symbol. Can burn any single card in a hand. Whenever its in your hand, it can burn but itself
