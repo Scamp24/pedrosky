@@ -37,7 +37,7 @@ The main game area has 3 zones:
 # Actions
 List of possible actions within a turn, only 1 action per turn is allowed
 
-## Burn (3 x)
+## Burn 
 Burning means disposing 1 or more cards in your hand that have a matching numbers. There a multiple ways to burn but the only requirement before burning anything is to at least have 1 card in your hand after burning, if this is not consider then its not possible. Whenever cards are burned they are dispose into the card on table.
 - Burning from your hand: If in the player's hand there is 2 or 3 matching numbers then cards could be burned
   ![IMG_4111](https://github.com/Scamp24/pedrosky/assets/61484587/3c813055-50c6-486c-8d04-f4f007f908b4)
@@ -47,7 +47,7 @@ Burning means disposing 1 or more cards in your hand that have a matching number
 - Burning from picking from the main deck: When a player draw from the main deck and the card's number matches 1 or more in the player's hand, it is allowed to burn
   
 
-## Draw Card ( 2x)
+## Draw Card
 In the player's turn, there's is the possibility of either burning or getting a card from the main deck to futher progress with their game, after picking a card there is 2 options
 - **Burn**: If there's the possibility to burn a card
   
