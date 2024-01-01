@@ -62,8 +62,10 @@ In the player's turn, there's is the possibility of either burning or getting a 
   ![IMG_4116](https://github.com/Scamp24/pedrosky/assets/61484587/ef310b3e-b6ec-4f33-9ea0-46da3ce75af7)
 
 
-## Swap ( 1x )
+## Swap 
 The player could swap a card from their hand to the card on table
+
+![IMG_4119](https://github.com/Scamp24/pedrosky/assets/61484587/ee9c11a6-7dfc-400f-a203-260a99ecc3d3)
 
 **Note**: A player can't just add the card to the hand, it must do one of the actions above 
 
