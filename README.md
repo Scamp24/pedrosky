@@ -1,4 +1,4 @@
-# PEDROSKY - Card Game
+![IMG_4121](https://github.com/Scamp24/pedrosky/assets/61484587/718a4504-177e-44d7-adc1-465d1d6a3058)# PEDROSKY - Card Game
 
 Card game played with a deck of 50 Spanish playing cards, comprising numbers 1-12 with symbols: Swords, Coins, Clubs, and Cups, along with two joker cards. The objective is to call the game when having the lowest sum within your hand.
 
@@ -82,7 +82,12 @@ The player feels certain that it has the lowest sum in the table, player must hi
   ![IMG_4121](https://github.com/Scamp24/pedrosky/assets/61484587/7fabd73d-562a-489e-879e-1f5d77109763)
 
 - 8: Reveals a card from another player's hand.
+
+  ![IMG_4122](https://github.com/Scamp24/pedrosky/assets/61484587/fab7cfaf-ba46-43a9-b9b7-8ea21b3e4796)
+
 - 9: Allows a blind swap between player hands.
+
+  
 - Joker: Acts as any number but not symbol. Can burn any single card in a hand. Whenever its in your hand, it can burn but itself
 
 If the player desires to use a power, then it must announce to the table that it will use the power and dispose it to the card on table. Power usage is completely optional and cards are treated as numbers regardless wether a power was used or not. 
