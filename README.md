@@ -104,6 +104,9 @@ If the player desires to use a power, then it must announce to the table that it
 
 # Penalties 
 - When a player intends to burn a card and the action is no possible, player must add to their hand the card on table
+  
+  ![IMG_4125](https://github.com/Scamp24/pedrosky/assets/61484587/cbeadd5a-ef5c-47b4-8bcd-4ad0c53d18a9)
+
 
 # Standard Game Setting: Points System
 This game is based on a point system where every player start with 0 points 
